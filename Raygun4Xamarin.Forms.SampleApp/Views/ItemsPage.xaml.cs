@@ -2,7 +2,7 @@
 using Xamarin.Forms.Xaml;
 using Raygun.Forms.SampleApp.Models;
 using Raygun.Forms.SampleApp.ViewModels;
-//using Raygun4Xamarin.Forms;
+using Raygun4Xamarin.Forms;
 
 namespace Raygun.Forms.SampleApp.Views
 {
@@ -24,7 +24,7 @@ namespace Raygun.Forms.SampleApp.Views
       if (item == null)
         return;
 
-      //RaygunClient.Current.RecordBreadcrumb($"Clicked on item: {item.Text}", RaygunBreadcrumbType.ClickEvent);
+      RaygunClient.Current.RecordBreadcrumb($"Clicked on item: {item.Text}", RaygunBreadcrumbType.ClickEvent);
 
       await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
 
@@ -36,7 +36,7 @@ namespace Raygun.Forms.SampleApp.Views
     {
       base.OnAppearing();
 
-      //RaygunClient.Current.RecordBreadcrumb("ItemsPage - OnAppearing", RaygunBreadcrumbType.Navigation);
+      RaygunClient.Current.RecordBreadcrumb("ItemsPage - OnAppearing", RaygunBreadcrumbType.Navigation);
 
       if (viewModel.Items.Count == 0)
         viewModel.LoadItemsCommand.Execute(null);

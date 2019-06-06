@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Foundation;
 using UIKit;
 
-//using Raygun4Xamarin.Forms;
-//using Raygun4Xamarin.Forms.iOS;
+using Raygun4Xamarin.Forms;
+using Raygun4Xamarin.Forms.iOS;
 
 namespace Raygun.Forms.SampleApp.iOS
 {
@@ -29,29 +29,29 @@ namespace Raygun.Forms.SampleApp.iOS
       LoadApplication(new App());
 
       // Pass on platform specific information to Raygun.
-      //RaygunPlatform.Configure();
+      RaygunPlatform.Configure();
 
       // Record platform level breadcrumb.
-      //RaygunClient.Current.RecordBreadcrumb("Finished launching app delegate", RaygunBreadcrumbType.Manual, RaygunBreadcrumbLevel.Debug);
+      RaygunClient.Current.RecordBreadcrumb("Finished launching app delegate", RaygunBreadcrumbType.Manual, RaygunBreadcrumbLevel.Debug);
 
       // Report a generic exception with a stack trace.
-      //GenerateBasicException();
+      GenerateBasicException();
 
       // Report an aggregated exception.
-      //GenerateAggregateException();
+      GenerateAggregateException();
 
       // Report an exception that contains inner exceptions.
-      //GenerateExceptionWithInnerException();
+      GenerateExceptionWithInnerException();
 
       // Report a native Objective-C exception.
-      //GenerateNativeException();
+      GenerateNativeException();
 
       // Send a test RUM timing event.
-      //RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.ViewLoaded, "TestView", 123);
+      RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.ViewLoaded, "TestView", 123);
 
       // Test timing events that will be ignored.
-      //RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.ViewLoaded, "DebugView", 123);
-      //RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.NetworkCall, "www.debug.com", 123);
+      RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.ViewLoaded, "DebugView", 123);
+      RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.NetworkCall, "www.debug.com", 123);
 
       return base.FinishedLaunching(app, options);
     }
@@ -64,7 +64,7 @@ namespace Raygun.Forms.SampleApp.iOS
       }
       catch (Exception ex)
       {
-        //RaygunClient.Current.Send(ex, new List<string> { "CustomTag" }, new Dictionary<string, object> { { "CustomString", "Value" }, { "CustomNumber", 123 } });
+        RaygunClient.Current.Send(ex, new List<string> { "CustomTag" }, new Dictionary<string, object> { { "CustomString", "Value" }, { "CustomNumber", 123 } });
       }
     }
 
@@ -82,7 +82,7 @@ namespace Raygun.Forms.SampleApp.iOS
       }
       catch (Exception ex)
       {
-        //RaygunClient.Current.Send(ex, new List<string> { "CustomTag" }, new Dictionary<string, object> { { "CustomString", "Value" }, { "CustomNumber", 123 } });
+        RaygunClient.Current.Send(ex, new List<string> { "CustomTag" }, new Dictionary<string, object> { { "CustomString", "Value" }, { "CustomNumber", 123 } });
       }
     }
 
@@ -94,7 +94,7 @@ namespace Raygun.Forms.SampleApp.iOS
       }
       catch (Exception ex)
       {
-        //RaygunClient.Current.Send(ex, new List<string> { "CustomTag" }, new Dictionary<string, object> { { "CustomString", "Value" }, { "CustomNumber", 123 } });
+        RaygunClient.Current.Send(ex, new List<string> { "CustomTag" }, new Dictionary<string, object> { { "CustomString", "Value" }, { "CustomNumber", 123 } });
       }
     }
 
@@ -106,7 +106,7 @@ namespace Raygun.Forms.SampleApp.iOS
       }
       catch (Exception ex)
       {
-        //RaygunClient.Current.Send(ex, new List<string> { "CustomTag" }, new Dictionary<string, object> { { "CustomString", "Value" }, { "CustomNumber", 123 } });
+        RaygunClient.Current.Send(ex, new List<string> { "CustomTag" }, new Dictionary<string, object> { { "CustomString", "Value" }, { "CustomNumber", 123 } });
       }
     }
   }

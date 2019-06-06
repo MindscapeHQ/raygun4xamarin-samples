@@ -5,7 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Raygun.Forms.SampleApp.Views;
 
-//using Raygun4Xamarin.Forms;
+using Raygun4Xamarin.Forms;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Raygun.Forms.SampleApp
@@ -17,7 +17,7 @@ namespace Raygun.Forms.SampleApp
       InitializeComponent();
 
       // Initialise the settings that will configure the Raygun client.
-      /*var settings = new RaygunSettings("_API_KEY_") 
+      var settings = new RaygunSettings("JKFHTSrwUnBvymJCSjdaaA") 
       { 
         LogLevel           = LogLevel.Verbose,
         BreadcrumbLevel    = RaygunBreadcrumbLevel.Debug,
@@ -48,32 +48,32 @@ namespace Raygun.Forms.SampleApp
       client.EnableCrashReporting();
       client.EnableRealUserMonitoring();
 
-      client.RecordBreadcrumb("Initialised Raygun", RaygunBreadcrumbType.Manual, RaygunBreadcrumbLevel.Debug);*/
+      client.RecordBreadcrumb("Initialised Raygun", RaygunBreadcrumbType.Manual, RaygunBreadcrumbLevel.Debug);
 
       MainPage = new MainPage();
     }
 
-    /*private void BeforeSendingCrashReportEventHandler(object sender, RaygunSendingCrashReportEventArgs e)
+    private void BeforeSendingCrashReportEventHandler(object sender, RaygunSendingCrashReportEventArgs e)
     {
       Console.WriteLine($"[App] BeforeSendingCrashReportEventHandler was called for {e.Report.Details.Error.ClassName}: {e.Report.Details.Error.Message}");
-    }*/
+    }
 
     protected override void OnStart()
     {
       // Handle when your app starts
-      //RaygunClient.Current.RecordBreadcrumb("App - OnStart", RaygunBreadcrumbType.Navigation);
+      RaygunClient.Current.RecordBreadcrumb("App - OnStart", RaygunBreadcrumbType.Navigation);
     }
 
     protected override void OnSleep()
     {
       // Handle when your app sleeps
-      //RaygunClient.Current.RecordBreadcrumb("App - OnSleep", RaygunBreadcrumbType.Navigation);
+      RaygunClient.Current.RecordBreadcrumb("App - OnSleep", RaygunBreadcrumbType.Navigation);
     }
 
     protected override void OnResume()
     {
       // Handle when your app resumes
-      //RaygunClient.Current.RecordBreadcrumb("App - OnResume", RaygunBreadcrumbType.Navigation);
+      RaygunClient.Current.RecordBreadcrumb("App - OnResume", RaygunBreadcrumbType.Navigation);
     }
   }
 }

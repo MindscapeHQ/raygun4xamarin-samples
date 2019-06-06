@@ -1,5 +1,5 @@
 ﻿using System;
-//using Raygun4Xamarin.Forms;
+using Raygun4Xamarin.Forms;
 
 namespace Raygun.Forms.SampleApp
 {
@@ -11,7 +11,7 @@ namespace Raygun.Forms.SampleApp
 
     public void DoSomething(Exception exception)
     {
-      //RaygunClient.Current.RecordBreadcrumb("About to do something", RaygunBreadcrumbType.Console, RaygunBreadcrumbLevel.Info);
+      RaygunClient.Current.RecordBreadcrumb("About to do something", RaygunBreadcrumbType.Console, RaygunBreadcrumbLevel.Info);
 
       DoSomethingElse(exception);
     }
@@ -28,7 +28,7 @@ namespace Raygun.Forms.SampleApp
 
     public void DoSomethingRisky(Exception exception)
     {
-      //RaygunClient.Current.RecordBreadcrumb("About to do something risky", RaygunBreadcrumbType.Console, RaygunBreadcrumbLevel.Warning);
+      RaygunClient.Current.RecordBreadcrumb("About to do something risky", RaygunBreadcrumbType.Console, RaygunBreadcrumbLevel.Warning);
 
       throw exception;
     }

@@ -6,8 +6,8 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 
-//using Raygun4Xamarin.Forms;
-//using Raygun4Xamarin.Forms.Android;
+using Raygun4Xamarin.Forms;
+using Raygun4Xamarin.Forms.Android;
 
 namespace Raygun.Forms.SampleApp.Droid
 {
@@ -24,29 +24,29 @@ namespace Raygun.Forms.SampleApp.Droid
       LoadApplication(new App());
 
       // Pass on platform specific information to Raygun.
-      //RaygunPlatform.Configure(this);
+      RaygunPlatform.Configure(this);
 
       // Record platform level breadcrumb.
-      //RaygunClient.Current.RecordBreadcrumb("Creating main activity", RaygunBreadcrumbType.Manual, RaygunBreadcrumbLevel.Debug);
+      RaygunClient.Current.RecordBreadcrumb("Creating main activity", RaygunBreadcrumbType.Manual, RaygunBreadcrumbLevel.Debug);
 
       // Report a generic exception with a stack trace.
-      //GenerateBasicException();
+      GenerateBasicException();
 
       // Report an aggregated exception.
-      //GenerateAggregateException();
+      GenerateAggregateException();
 
       // Report an exception that contains inner exceptions.
-      //GenerateExceptionWithInnerException();
+      GenerateExceptionWithInnerException();
 
       // Report an unobserved task exception.
-      //GenerateUnobservedTaskException();
+      GenerateUnobservedTaskException();
 
       // Send a test RUM timing event.
-      //RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.ViewLoaded, "TestView", 123);
+      RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.ViewLoaded, "TestView", 123);
 
       // Test timing events that will be ignored.
-      //RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.ViewLoaded, "DebugView", 123);
-      //RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.NetworkCall, "www.debug.com", 123);
+      RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.ViewLoaded, "DebugView", 123);
+      RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.NetworkCall, "www.debug.com", 123);
     }
 
     private void GenerateBasicException()
@@ -57,7 +57,7 @@ namespace Raygun.Forms.SampleApp.Droid
       }
       catch (Exception ex)
       {
-        //RaygunClient.Current.Send(ex, new List<string> { "CustomTag" }, new Dictionary<string, object> { { "CustomString", "Value" }, { "CustomNumber", 123 } });
+        RaygunClient.Current.Send(ex, new List<string> { "CustomTag" }, new Dictionary<string, object> { { "CustomString", "Value" }, { "CustomNumber", 123 } });
       }
     }
 
@@ -75,7 +75,7 @@ namespace Raygun.Forms.SampleApp.Droid
       }
       catch (Exception ex)
       {
-        //RaygunClient.Current.Send(ex, new List<string> { "CustomTag" }, new Dictionary<string, object> { { "CustomString", "Value" }, { "CustomNumber", 123 } });
+        RaygunClient.Current.Send(ex, new List<string> { "CustomTag" }, new Dictionary<string, object> { { "CustomString", "Value" }, { "CustomNumber", 123 } });
       }
     }
 
@@ -87,7 +87,7 @@ namespace Raygun.Forms.SampleApp.Droid
       }
       catch (Exception ex)
       {
-        //RaygunClient.Current.Send(ex, new List<string> { "CustomTag" }, new Dictionary<string, object> { { "CustomString", "Value" }, { "CustomNumber", 123 } });
+        RaygunClient.Current.Send(ex, new List<string> { "CustomTag" }, new Dictionary<string, object> { { "CustomString", "Value" }, { "CustomNumber", 123 } });
       }
     }
 
@@ -98,7 +98,7 @@ namespace Raygun.Forms.SampleApp.Droid
 
     private void DoSomeTask()
     {
-      //RaygunClient.Current.RecordBreadcrumb("About to do some task", RaygunBreadcrumbType.Console, RaygunBreadcrumbLevel.Warning);
+      RaygunClient.Current.RecordBreadcrumb("About to do some task", RaygunBreadcrumbType.Console, RaygunBreadcrumbLevel.Warning);
 
       // Testing unobserved task exception handling.
       Task.Factory.StartNew(() =>

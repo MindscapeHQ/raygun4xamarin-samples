@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Raygun.Forms.SampleApp.Models;
-//using Raygun4Xamarin.Forms;
+using Raygun4Xamarin.Forms;
 
 namespace Raygun.Forms.SampleApp.Services
 {
@@ -23,7 +23,7 @@ namespace Raygun.Forms.SampleApp.Services
           Description = "Logging in user A", 
           Action      = () => 
           {
-            //RaygunClient.Current.User = new RaygunUserInfo("A") { FirstName = "A", FullName = "Mr A", Email = "a@raygun.com", IsAnonymous = false }; 
+            RaygunClient.Current.User = new RaygunUserInfo("A") { FirstName = "A", FullName = "Mr A", Email = "a@raygun.com", IsAnonymous = false }; 
           } 
         },
 
@@ -34,7 +34,7 @@ namespace Raygun.Forms.SampleApp.Services
           Description = "Logging in user B",
           Action      = () =>
           {
-            //RaygunClient.Current.User = new RaygunUserInfo("B") { FirstName = "B", FullName = "Mr B", Email = "b@raygun.com", IsAnonymous = false };
+            RaygunClient.Current.User = new RaygunUserInfo("B") { FirstName = "B", FullName = "Mr B", Email = "b@raygun.com", IsAnonymous = false };
           }
         },
 
@@ -45,7 +45,7 @@ namespace Raygun.Forms.SampleApp.Services
           Description = "Sending a custom RUM timing event",
           Action      = () =>
           {
-            //RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.ViewLoaded, "TestView", 123);
+            RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.ViewLoaded, "TestView", 123);
           }
         },
 
@@ -56,7 +56,7 @@ namespace Raygun.Forms.SampleApp.Services
           Description = "Sending a custom RUM timing event",
           Action      = () =>
           {
-            //RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.NetworkCall, "TestUrl", 123);
+            RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.NetworkCall, "TestUrl", 123);
           }
         },
 
@@ -67,7 +67,7 @@ namespace Raygun.Forms.SampleApp.Services
           Description = "Sending a crash report",
           Action      = () =>
           {
-            //RaygunClient.Current.Send(new Exception("A Raygun Test Exception"), new List<string>{ "ManualReport" });
+            RaygunClient.Current.Send(new Exception("A Raygun Test Exception"), new List<string>{ "ManualReport" });
           }
         },
       };

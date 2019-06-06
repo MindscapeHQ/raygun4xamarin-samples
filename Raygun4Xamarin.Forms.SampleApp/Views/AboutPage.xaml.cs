@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-//using Raygun4Xamarin.Forms;
+using Raygun4Xamarin.Forms;
 
 namespace Raygun.Forms.SampleApp.Views
 {
@@ -17,7 +17,7 @@ namespace Raygun.Forms.SampleApp.Views
     {
       base.OnAppearing();
 
-      //RaygunClient.Current.RecordBreadcrumb("AboutPage - OnAppearing", RaygunBreadcrumbType.Navigation);
+      RaygunClient.Current.RecordBreadcrumb("AboutPage - OnAppearing", RaygunBreadcrumbType.Navigation);
     }
   }
 }
