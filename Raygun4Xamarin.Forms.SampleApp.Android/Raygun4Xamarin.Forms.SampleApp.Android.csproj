@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.482894" />
+    <PackageReference Include="Raygun4Xamarin.Forms" Version="1.0.0-beta" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0.1" />
@@ -94,14 +95,6 @@
     <ProjectReference Include="..\Raygun4Xamarin.Forms.SampleApp\Raygun4Xamarin.Forms.SampleApp.csproj">
       <Project>{4CE7F1C3-56D9-4E8B-A409-0C0B0C9799FA}</Project>
       <Name>Raygun4Xamarin.Forms.SampleApp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Raygun4Xamarin.Forms\Raygun4Xamarin.Forms.csproj">
-      <Project>{7A1674D0-0809-4871-8A8F-C61CF3186120}</Project>
-      <Name>Raygun4Xamarin.Forms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Raygun4Xamarin.Forms.Android\Raygun4Xamarin.Forms.Android.csproj">
-      <Project>{F9A35215-67E0-482B-8D40-466B3FB6BFDE}</Project>
-      <Name>Raygun4Xamarin.Forms.Android</Name>
     </ProjectReference>
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

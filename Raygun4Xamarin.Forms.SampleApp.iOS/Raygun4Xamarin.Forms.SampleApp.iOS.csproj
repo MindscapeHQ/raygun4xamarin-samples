@@ -133,19 +133,12 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.482894" />
+    <PackageReference Include="Raygun4Xamarin.Forms" Version="1.0.0-beta" /> 
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Raygun4Xamarin.Forms.SampleApp\Raygun4Xamarin.Forms.SampleApp.csproj">
       <Project>{4CE7F1C3-56D9-4E8B-A409-0C0B0C9799FA}</Project>
       <Name>Raygun4Xamarin.Forms.SampleApp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Raygun4Xamarin.Forms\Raygun4Xamarin.Forms.csproj">
-      <Project>{7A1674D0-0809-4871-8A8F-C61CF3186120}</Project>
-      <Name>Raygun4Xamarin.Forms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Raygun4Xamarin.Forms.iOS\Raygun4Xamarin.Forms.iOS.csproj">
-      <Project>{06A9F2C8-3118-483E-9669-8278902EDEB7}</Project>
-      <Name>Raygun4Xamarin.Forms.iOS</Name>
     </ProjectReference>
     <ProjectReference Include="..\Raygun4Xamarin.Binding.Crash.iOS\Raygun4Xamarin.Binding.Crash.iOS.csproj">
       <Project>{59F90238-1E7D-4A59-BFD5-42C46B08ED3F}</Project>
