@@ -17,7 +17,7 @@ namespace Raygun.Forms.SampleApp
       InitializeComponent();
 
       // Initialise the settings that will configure the Raygun client.
-      var settings = new RaygunSettings("JKFHTSrwUnBvymJCSjdaaA") 
+      var settings = new RaygunSettings("_API_KEY_") 
       { 
         LogLevel           = LogLevel.Verbose,
         BreadcrumbLevel    = RaygunBreadcrumbLevel.Debug,
