@@ -1,6 +1,6 @@
-# raygun4xamarin-samples
+# Raygun4Xamarin-samples
 
-## raygun4xamarin.forms Sample App
+## Raygun4Xamarin.Forms Sample App
 
 A sample Xamarin Forms (4.0) application integrated with the Raygun4Xamarin.Forms provider.
 
@@ -14,8 +14,6 @@ The currently supported platforms are Android and iOS with the following version
  
  * Xamarin.Android 8.0
  * Xamarin.iOS 10.0
-
-## Configuration
 
 ## Initialisation
 
