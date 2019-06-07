@@ -26,16 +26,16 @@ Using the static 'Init' method will also ensure a shared RaygunClient instance i
 ``` csharp
 public partial class App : Application
 {
-	public App()
-	{
-		InitializeComponent();
+  public App()
+  {
+    InitializeComponent();
 
-		// Initialising the Raygun client 
-		RaygunClient.Init("_API_KEY_");
+	// Initialising the Raygun client 
+	RaygunClient.Init("_API_KEY_");
 
-		// Remaining application setup logic
-		MainPage = new MainPage();
-	}
+	// Remaining application setup logic
+	MainPage = new MainPage();
+  }
 }
 ```
 
@@ -47,10 +47,10 @@ Assigning user information is performed by assigning a RaygunUserInfo object to 
 ``` csharp
 RaygunClient.Current.User = new RaygunUserInfo("_UNIQUE_ID_")
 {
-	FirstName   = "Ronald";
-	FullName    = "Ronald Raygun";
-	Email       = "ronald@raygun.com";
-	IsAnonymous = false;
+  FirstName   = "Ronald";
+  FullName    = "Ronald Raygun";
+  Email       = "ronald@raygun.com";
+  IsAnonymous = false;
 };
 ```
 
@@ -72,10 +72,10 @@ Once enabled your are able to:
 ``` csharp
 RaygunClient.Current.BeforeSendingCrashReportEvent += (sender, e) =>
 {
-	if (e.Report.Details.Error.ClassName == "NotImplementedException")
-	{
-    	e.Cancel = true;
-	}
+  if (e.Report.Details.Error.ClassName == "NotImplementedException")
+  {
+   	e.Cancel = true;
+  }
 };
 ```
 
@@ -84,11 +84,11 @@ RaygunClient.Current.BeforeSendingCrashReportEvent += (sender, e) =>
 ``` csharp
 try
 {
-	DoSomethingRisky();
+  DoSomethingRisky();
 }
 catch (Exception exception)
 {
-	RaygunClient.Current.Send(exception);
+  RaygunClient.Current.Send(exception);
 }
 ```
 
