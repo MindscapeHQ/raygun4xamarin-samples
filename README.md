@@ -116,6 +116,8 @@ RaygunClient.Current.BeforeSendingCrashReportEvent += (sender, e) =>
 
 ### Manually reporting errors
 
+Exceptions may be manually reported using the client.
+
 ``` csharp
 try
 {
@@ -128,6 +130,8 @@ catch (Exception exception)
 ```
 
 ### Recording breadcrumbs
+
+Breadcrumbs can be recorded using the client throughout your application. The current crumbs are then sent with each error report sent.
 
 ``` csharp
 RaygunClient.Current.RecordBreadcrumb("Entered login screen");
@@ -147,6 +151,8 @@ Once enabled your are able to:
 * Manually report timing events
 
 ### Manually report timing events
+
+RUM timing events can be manually reported using the client. 
 
 ``` csharp
 RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.ViewLoaded, "TestView", 123);
