@@ -19,9 +19,7 @@ The currently supported platforms are Android and iOS with the following version
 
 ## Initialisation
 
-The initialisation of Raygun must occur early in the apps initial startup phase. We recommend doing this in the constructor of your Application class. 
-
-Using the static 'Init' method will also ensure a shared RaygunClient instance is available through the static 'Current' property on the RaygunClient class.
+The initialisation of Raygun must occur early in the apps initial startup phase. We recommend doing this in the constructor of your Application class. Using the static `Init` method will also ensure a shared `RaygunClient` instance is available through the static `Current` property on the `RaygunClient` class.
 
 ``` csharp
 public partial class App : Application
@@ -39,7 +37,7 @@ public partial class App : Application
 }
 ```
 
-Each platform being targeted will require an additional configuration step in the following places. 
+Each platform being targeted requires an additional configuration step using the `RaygunPlatform` class in the following places. 
 
 **For Android:**
 
@@ -80,7 +78,7 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsAppli
 ## Unique User Tracking
 
 Providing user information will allow Raygun to correlate error reports and RUM events with specific users.
-Assigning user information is performed by assigning a RaygunUserInfo object to your Raygun client instance. 
+Assigning user information is performed by assigning a `RaygunUserInfo` object to your client instance. 
 
 ``` csharp
 RaygunClient.Current.User = new RaygunUserInfo("_UNIQUE_ID_")
@@ -94,7 +92,7 @@ RaygunClient.Current.User = new RaygunUserInfo("_UNIQUE_ID_")
 
 ## Crash Reporting
 
-Once the Raygun client is initialised you can enable the client's Crash Reporting functionality.
+Once the client is initialised you can enable it's Crash Reporting functionality.
 
 ``` csharp
 RaygunClient.Current.EnableCrashReporting();
@@ -138,7 +136,7 @@ RaygunClient.Current.RecordBreadcrumb("Entered login screen");
 
 ## Real User Monitoring
 
-Once the Raygun client is initialised you can enable the client's Real User Monitoring (RUM) functionality.
+Once the client is initialised you can enable it's Real User Monitoring (RUM) functionality.
 
 ``` csharp
 RaygunClient.Current.EnableRealUserMonitoring();
