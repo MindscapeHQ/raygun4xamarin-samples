@@ -39,10 +39,48 @@ public partial class App : Application
 }
 ```
 
+Each platform being targeted will require an additional configuration step in the following places. 
+
+**For Android:**
+
+```
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+  protected override void OnCreate(Bundle savedInstanceState)
+  {
+    base.OnCreate(savedInstanceState);
+    global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+    LoadApplication(new App());
+
+    // Configure Raygun for the current platform.
+    RaygunPlatform.Configure(this);
+  }
+}
+```
+
+**For iOS:**
+
+```
+public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+{
+  public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+  {
+    // Delegate setup logic 
+    global::Xamarin.Forms.Forms.Init();
+    LoadApplication(new App());
+
+    // Configure Raygun for the current platform.
+    RaygunPlatform.Configure();
+
+    return base.FinishedLaunching(app, options);
+  }
+}
+```
+
 ## Unique User Tracking
 
 Providing user information will allow Raygun to correlate error reports and RUM events with specific users.
-Assigning user information is performed by assigning a RaygunUserInfo object to your Raygun client. 
+Assigning user information is performed by assigning a RaygunUserInfo object to your Raygun client instance. 
 
 ``` csharp
 RaygunClient.Current.User = new RaygunUserInfo("_UNIQUE_ID_")
