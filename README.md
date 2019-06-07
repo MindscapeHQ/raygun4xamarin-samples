@@ -44,11 +44,12 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 {
   protected override void OnCreate(Bundle savedInstanceState)
   {
+    // MainActivity startup logic
     base.OnCreate(savedInstanceState);
     global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
     LoadApplication(new App());
 
-    // Configure Raygun for the current platform.
+    // Configure Raygun for the current platform
     RaygunPlatform.Configure(this);
   }
 }
@@ -61,11 +62,11 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsAppli
 {
   public override bool FinishedLaunching(UIApplication app, NSDictionary options)
   {
-    // Delegate setup logic 
+    // AppDelegate startup logic
     global::Xamarin.Forms.Forms.Init();
     LoadApplication(new App());
 
-    // Configure Raygun for the current platform.
+    // Configure Raygun for the current platform
     RaygunPlatform.Configure();
 
     return base.FinishedLaunching(app, options);
