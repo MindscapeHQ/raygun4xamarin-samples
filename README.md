@@ -26,11 +26,11 @@ public partial class App : Application
   {
     InitializeComponent();
 
-	// Initialising the Raygun client 
-	RaygunClient.Init("_API_KEY_");
+    // Initialising the Raygun client 
+    RaygunClient.Init("_API_KEY_");
 
-	// Remaining application setup logic
-	MainPage = new MainPage();
+    // Remaining application setup logic
+    MainPage = new MainPage();
   }
 }
 ```
@@ -39,7 +39,7 @@ Each platform being targeted requires an additional configuration step using the
 
 **For Android:**
 
-```
+``` csharp
 public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 {
   protected override void OnCreate(Bundle savedInstanceState)
@@ -56,7 +56,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
 **For iOS:**
 
-```
+``` csharp
 public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
 {
   public override bool FinishedLaunching(UIApplication app, NSDictionary options)
