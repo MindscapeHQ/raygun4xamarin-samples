@@ -82,10 +82,10 @@ Assigning user information is performed by assigning a `RaygunUserInfo` object t
 ``` csharp
 RaygunClient.Current.User = new RaygunUserInfo("_UNIQUE_ID_")
 {
-  FirstName   = "Ronald";
-  FullName    = "Ronald Raygun";
-  Email       = "ronald@raygun.com";
-  IsAnonymous = false;
+  FirstName   = "Ronald",
+  FullName    = "Ronald Raygun",
+  Email       = "ronald@raygun.com",
+  IsAnonymous = false
 };
 ```
 
