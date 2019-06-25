@@ -47,6 +47,7 @@ namespace Raygun.Forms.SampleApp
       // Enabling the products.
       client.EnableCrashReporting();
       client.EnableRealUserMonitoring();
+      client.EnableNetworkPerformanceMonitoring();
 
       client.RecordBreadcrumb("Initialised Raygun", RaygunBreadcrumbType.Manual, RaygunBreadcrumbLevel.Debug);
 
