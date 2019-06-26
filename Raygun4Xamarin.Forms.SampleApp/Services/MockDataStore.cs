@@ -171,7 +171,7 @@ namespace Raygun.Forms.SampleApp.Services
           Description = "Performs a web request that is timed and reported to Raygun",
           Action      = () =>
           {
-            using(var client = new HttpClient())
+            using (var client = new HttpClient())
             {
               var response = client.GetAsync("https://www.raygun.com").Result;
               Console.WriteLine("Made web request with response: " + response.StatusCode);
@@ -186,7 +186,7 @@ namespace Raygun.Forms.SampleApp.Services
           Description = "Performs a web request that is not reported to Raygun",
           Action      = () =>
           {
-            using(var client = new HttpClient())
+            using (var client = new HttpClient())
             {
               var response = client.GetAsync("http://www.debug.com").Result;
               Console.WriteLine("Made web request with response: " + response.StatusCode);
