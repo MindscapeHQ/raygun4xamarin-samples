@@ -11,8 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.482894" />
-    <PackageReference Include="Raygun4Xamarin.Forms" Version="1.0.0-beta" />  
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.497661" />
+    <PackageReference Include="Raygun4Xamarin.Forms" Version="1.0.0" />
   </ItemGroup>
     
 </Project>
