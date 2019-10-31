@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.497661" />
-    <PackageReference Include="Raygun4Xamarin.Forms" Version="1.0.2" />
+    <PackageReference Include="Raygun4Xamarin.Forms" Version="1.0.3" />
   </ItemGroup>
     
 </Project>
