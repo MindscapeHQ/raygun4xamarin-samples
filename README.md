@@ -74,10 +74,10 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsAppli
 }
 ```
 
-## Unique User Tracking
+## Customers
 
-Providing user information will allow Raygun to correlate error reports and RUM events with specific users.
-Assigning user information is performed by assigning a `RaygunUserInfo` object to your client instance. 
+Providing customer information will allow Raygun to correlate error reports and RUM events with specific customers.
+Assigning customer information is performed by assigning a `RaygunUserInfo` object to your client instance. 
 
 ``` csharp
 RaygunClient.Current.User = new RaygunUserInfo("_UNIQUE_ID_")
