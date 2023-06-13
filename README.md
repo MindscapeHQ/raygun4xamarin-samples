@@ -15,9 +15,11 @@ The currently supported platforms are Android and iOS with the following version
  * Xamarin.Android 8.0
  * Xamarin.iOS 10.0
 
-## Initialisation
+## Initialize RaygunClient
 
-The initialisation of Raygun must occur early in the apps initial startup phase. We recommend doing this in the constructor of your Application class. Using the static `Init` method will also ensure a shared `RaygunClient` instance is available through the static `Current` property on the `RaygunClient` class.
+In the constructor of the `App` class in your base project, call the static `RaygunClient.Init()` method with your app API key. Using the static `Init` method will ensure a shared `RaygunClient` instance is available through the static property `Current`.
+
+In `App.cs:`
 
 ``` csharp
 public partial class App : Application
@@ -27,7 +29,7 @@ public partial class App : Application
     InitializeComponent();
 
     // Initialising the Raygun client 
-    RaygunClient.Init("_API_KEY_");
+    RaygunClient.Init("YOUR_API_KEY");
 
     // Remaining application setup logic
     MainPage = new MainPage();
@@ -35,9 +37,13 @@ public partial class App : Application
 }
 ```
 
+## Configure Raygun for your platform
+
 Each platform being targeted requires an additional configuration step using the `RaygunPlatform` class in the following places. 
 
-**For Android:**
+### For Android:
+
+In `MainActivity.cs:`
 
 ``` csharp
 public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
@@ -55,7 +61,14 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 }
 ```
 
-**For iOS:**
+**Android Troubleshooting**
+
+You may need to install the `Xamarin.Android.Support.LocalBroadcastManager` package if you are having troubles getting Raygun working in your Android project. 
+You may also need to set the minimum SDK version of your project to Android 9.
+
+### For iOS:
+
+In `AppDelegate.cs:`
 
 ``` csharp
 public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
