@@ -6,6 +6,11 @@ A sample Xamarin Forms (4.0) application integrated with the Raygun4Xamarin.Form
 
 # Raygun4Xamarin.Forms provider
 
+## Where is my app API key?
+When sending exceptions to the Raygun service, an app API key is required to map the messages to your application.
+
+When you create a new application in your Raygun dashboard, your app API key is displayed within the instructions page. You can also find the API key by clicking the "Application Settings" button in the side bar of the Raygun dashboard.
+
 ## Installation
 
 The provider targets .NET Standard 2.0 and is available through NuGet packages, found [here](https://www.nuget.org/packages/raygun4xamarin.forms/).
