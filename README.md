@@ -36,6 +36,10 @@ public partial class App : Application
     // Initialising the Raygun client 
     RaygunClient.Init("YOUR_API_KEY");
 
+    // Enable Raygun Products
+    RaygunClient.Current.EnableCrashReporting(); 
+    RaygunClient.Current.EnableRealUserMonitoring(); 
+
     // Remaining application setup logic
     MainPage = new MainPage();
   }
@@ -92,86 +96,4 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsAppli
 }
 ```
 
-## Customers
-
-Providing customer information will allow Raygun to correlate error reports and RUM events with specific customers.
-Assigning customer information is performed by assigning a `RaygunUserInfo` object to your client instance. 
-
-``` csharp
-RaygunClient.Current.User = new RaygunUserInfo("_UNIQUE_ID_")
-{
-  FirstName   = "Ronald",
-  FullName    = "Ronald Raygun",
-  Email       = "ronald@raygun.com",
-  IsAnonymous = false
-};
-```
-
-## Crash Reporting
-
-Once the client is initialised you can enable it's Crash Reporting functionality.
-
-``` csharp
-RaygunClient.Current.EnableCrashReporting();
-```
-
-Once enabled your are able to:
-* Automatically report unhandled exceptions
-* Manually report errors
-* Record breadcrumbs
-
-### Before send event handling
-
-``` csharp
-RaygunClient.Current.BeforeSendingCrashReportEvent += (sender, e) =>
-{
-  if (e.Report.Details.Error.ClassName == "NotImplementedException")
-  {
-   	e.Cancel = true;
-  }
-};
-```
-
-### Manually reporting errors
-
-Exceptions may be manually reported using the client.
-
-``` csharp
-try
-{
-  DoSomethingRisky();
-}
-catch (Exception exception)
-{
-  RaygunClient.Current.Send(exception);
-}
-```
-
-### Recording breadcrumbs
-
-Breadcrumbs can be recorded using the client throughout your application. The current crumbs are then sent with each error report sent.
-
-``` csharp
-RaygunClient.Current.RecordBreadcrumb("Entered login screen");
-```
-
-## Real User Monitoring
-
-Once the client is initialised you can enable it's Real User Monitoring (RUM) functionality.
-
-``` csharp
-RaygunClient.Current.EnableRealUserMonitoring();
-```
-
-Once enabled your are able to:
-* Automatically report user sessions
-* Automatically report view timing events
-* Manually report timing events
-
-### Manually report timing events
-
-RUM timing events can be manually reported using the client. 
-
-``` csharp
-RaygunClient.Current.SendTimingEvent(RaygunRUMEventTimingType.ViewLoaded, "TestView", 123);
-```
+See the [Raygun4Xamarin](https://github.com/MindscapeHQ/raygun4xamarin) repository for more details on using this provider.
