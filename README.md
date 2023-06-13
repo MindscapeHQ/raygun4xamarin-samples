@@ -24,7 +24,7 @@ The currently supported platforms are Android and iOS with the following version
 
 In the constructor of the `App` class in your base project, call the static `RaygunClient.Init()` method with your app API key. Using the static `Init` method will ensure a shared `RaygunClient` instance is available through the static property `Current`.
 
-In `App.cs:`
+In `App.xaml.cs:`
 
 ``` csharp
 public partial class App : Application
